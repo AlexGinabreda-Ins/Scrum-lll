@@ -1,11 +1,11 @@
 package service;
 
-import dao.productDAO.ProductDAO;
-import dao.productDAO.ProductDAOImpl;
-import dao.supermarketDAO.SupermarketDAO;
-import dao.supermarketDAO.SupermarketDAOImpl;
-import dao.ticketDAO.TicketDAO;
-import dao.ticketDAO.TicketDAOImpl;
+import dao.product.ProductDAO;
+import dao.product.ProductDAOImpl;
+import dao.supermarket.SupermarketDAO;
+import dao.supermarket.SupermarketDAOImpl;
+import dao.ticket.TicketDAO;
+import dao.ticket.TicketDAOImpl;
 import model.Products;
 import model.Supermarket;
 import model.Ticket;
