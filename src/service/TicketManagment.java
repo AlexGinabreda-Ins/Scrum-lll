@@ -1,14 +1,16 @@
 package service;
 
-import dao.SupermarketDAO;
-import dao.TicketDAO;
-import dao.impl.SupermarketDAOImpl;
-import dao.impl.TicketDAOImpl;
-import database.DatabaseConnection;
+import dao.productDAO.ProductDAO;
+import dao.productDAO.ProductDAOImpl;
+import dao.supermarketDAO.SupermarketDAO;
+import dao.supermarketDAO.SupermarketDAOImpl;
+import dao.ticketDAO.TicketDAO;
+import dao.ticketDAO.TicketDAOImpl;
 import model.Products;
 import model.Supermarket;
 import model.Ticket;
 import model.User;
+import database.DatabaseConnection;
 
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -20,15 +22,21 @@ import java.util.List;
 public class TicketManagment {
     private final TicketDAO ticketDAO;
     private final SupermarketDAO supermarketDAO;
+    private final ProductDAO productDAO;
     private final ArrayList<User> users;
 
     public TicketManagment() {
-        this(new TicketDAOImpl(), new SupermarketDAOImpl());
+        this(new TicketDAOImpl(), new SupermarketDAOImpl(), new ProductDAOImpl());
     }
 
     public TicketManagment(TicketDAO ticketDAO, SupermarketDAO supermarketDAO) {
+        this(ticketDAO, supermarketDAO, new ProductDAOImpl());
+    }
+
+    public TicketManagment(TicketDAO ticketDAO, SupermarketDAO supermarketDAO, ProductDAO productDAO) {
         this.ticketDAO = ticketDAO;
         this.supermarketDAO = supermarketDAO;
+        this.productDAO = productDAO;
         this.users = new ArrayList<>();
     }
 
@@ -64,6 +72,14 @@ public class TicketManagment {
 
     public List<User> getUsers() {
         return users;
+    }
+
+    public List<Products> getAllProducts() throws SQLException {
+        return productDAO.findAll();
+    }
+
+    public List<Supermarket> getAllSupermarkets() throws SQLException {
+        return supermarketDAO.findAll();
     }
 
     public void addProductsForTicket(Ticket ticket, Products product) throws SQLException {

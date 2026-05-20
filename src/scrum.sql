@@ -2,12 +2,20 @@ PRAGMA foreign_keys = ON;
 
 BEGIN TRANSACTION;
 
+CREATE TABLE IF NOT EXISTS client (
+    dni TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT,
+    phone TEXT
+);
+
 -- Limpia primero las tablas dependientes para evitar datos antiguos o duplicados.
 DELETE FROM ticket_products;
 DELETE FROM ticket;
 DELETE FROM user_supermarkets;
 DELETE FROM products;
 DELETE FROM supermarket;
+DELETE FROM client;
 DELETE FROM "user";
 
 -- Reinicia autoincrementos de SQLite.
