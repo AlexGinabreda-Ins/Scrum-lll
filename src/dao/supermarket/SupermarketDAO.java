@@ -1,4 +1,4 @@
-package dao;
+package dao.supermarket;
 
 import model.Supermarket;
 

@@ -36,6 +36,13 @@ public class DatabaseConnection {
                     "name TEXT NOT NULL" +
                     ")");
 
+            statement.execute("CREATE TABLE IF NOT EXISTS client (" +
+                    "dni TEXT PRIMARY KEY, " +
+                    "name TEXT NOT NULL, " +
+                    "email TEXT, " +
+                    "phone TEXT" +
+                    ")");
+
             statement.execute("CREATE TABLE IF NOT EXISTS supermarket (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "name TEXT NOT NULL, " +

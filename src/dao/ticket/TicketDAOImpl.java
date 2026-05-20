@@ -1,6 +1,5 @@
-package dao.impl;
+package dao.ticket;
 
-import dao.TicketDAO;
 import database.DatabaseConnection;
 import model.Products;
 import model.Supermarket;

@@ -1,4 +1,4 @@
-package dao;
+package dao.ticket;
 
 import model.Products;
 import model.Ticket;

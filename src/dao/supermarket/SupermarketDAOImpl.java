@@ -1,6 +1,5 @@
-package dao.impl;
+package dao.supermarket;
 
-import dao.SupermarketDAO;
 import database.DatabaseConnection;
 import model.Supermarket;
 
